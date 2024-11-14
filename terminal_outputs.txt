@@ -1,0 +1,1023 @@
+          + enabled = (known after apply)
+        }
+
+      + ephemeral_block_device (known after apply)
+
+      + instance_market_options (known after apply)
+
+      + maintenance_options (known after apply)
+
+      + metadata_options {
+          + http_endpoint               = "enabled"
+          + http_protocol_ipv6          = "disabled"
+          + http_put_response_hop_limit = 1
+          + http_tokens                 = "optional"
+          + instance_metadata_tags      = (known after apply)
+        }
+
+      + network_interface (known after apply)
+
+      + private_dns_name_options (known after apply)
+
+      + root_block_device (known after apply)
+
+      + timeouts {}
+    }
+
+  # module.vpc.aws_default_network_acl.this[0] will be created
+  + resource "aws_default_network_acl" "this" {
+      + arn                    = (known after apply)
+      + default_network_acl_id = (known after apply)
+      + id                     = (known after apply)
+      + owner_id               = (known after apply)
+      + tags                   = {
+          + "Environment" = "dev"
+          + "Name"        = "my-vpc-default"
+          + "Terraform"   = "true"
+        }
+      + tags_all               = {
+          + "Environment" = "dev"
+          + "Name"        = "my-vpc-default"
+          + "Terraform"   = "true"
+        }
+      + vpc_id                 = (known after apply)
+
+      + egress {
+          + action          = "allow"
+          + from_port       = 0
+          + ipv6_cidr_block = "::/0"
+          + protocol        = "-1"
+          + rule_no         = 101
+          + to_port         = 0
+            # (1 unchanged attribute hidden)
+        }
+      + egress {
+          + action          = "allow"
+          + cidr_block      = "0.0.0.0/0"
+          + from_port       = 0
+          + protocol        = "-1"
+          + rule_no         = 100
+          + to_port         = 0
+            # (1 unchanged attribute hidden)
+        }
+
+      + ingress {
+          + action          = "allow"
+          + from_port       = 0
+          + ipv6_cidr_block = "::/0"
+          + protocol        = "-1"
+          + rule_no         = 101
+          + to_port         = 0
+            # (1 unchanged attribute hidden)
+        }
+      + ingress {
+          + action          = "allow"
+          + cidr_block      = "0.0.0.0/0"
+          + from_port       = 0
+          + protocol        = "-1"
+          + rule_no         = 100
+          + to_port         = 0
+            # (1 unchanged attribute hidden)
+        }
+    }
+
+  # module.vpc.aws_default_route_table.default[0] will be created
+  + resource "aws_default_route_table" "default" {
+      + arn                    = (known after apply)
+      + default_route_table_id = (known after apply)
+      + id                     = (known after apply)
+      + owner_id               = (known after apply)
+      + route                  = (known after apply)
+      + tags                   = {
+          + "Environment" = "dev"
+          + "Name"        = "my-vpc-default"
+          + "Terraform"   = "true"
+        }
+      + tags_all               = {
+          + "Environment" = "dev"
+          + "Name"        = "my-vpc-default"
+          + "Terraform"   = "true"
+        }
+      + vpc_id                 = (known after apply)
+
+      + timeouts {
+          + create = "5m"
+          + update = "5m"
+        }
+    }
+
+  # module.vpc.aws_default_security_group.this[0] will be created
+  + resource "aws_default_security_group" "this" {
+      + arn                    = (known after apply)
+      + description            = (known after apply)
+      + egress                 = (known after apply)
+      + id                     = (known after apply)
+      + ingress                = (known after apply)
+      + name                   = (known after apply)
+      + name_prefix            = (known after apply)
+      + owner_id               = (known after apply)
+      + revoke_rules_on_delete = false
+      + tags                   = {
+          + "Environment" = "dev"
+          + "Name"        = "my-vpc-default"
+          + "Terraform"   = "true"
+        }
+      + tags_all               = {
+          + "Environment" = "dev"
+          + "Name"        = "my-vpc-default"
+          + "Terraform"   = "true"
+        }
+      + vpc_id                 = (known after apply)
+    }
+
+  # module.vpc.aws_internet_gateway.this[0] will be created
+  + resource "aws_internet_gateway" "this" {
+      + arn      = (known after apply)
+      + id       = (known after apply)
+      + owner_id = (known after apply)
+      + tags     = {
+          + "Environment" = "dev"
+          + "Name"        = "my-vpc"
+          + "Terraform"   = "true"
+        }
+      + tags_all = {
+          + "Environment" = "dev"
+          + "Name"        = "my-vpc"
+          + "Terraform"   = "true"
+        }
+      + vpc_id   = (known after apply)
+    }
+
+  # module.vpc.aws_route.public_internet_gateway[0] will be created
+  + resource "aws_route" "public_internet_gateway" {
+      + destination_cidr_block = "0.0.0.0/0"
+      + gateway_id             = (known after apply)
+      + id                     = (known after apply)
+      + instance_id            = (known after apply)
+      + instance_owner_id      = (known after apply)
+      + network_interface_id   = (known after apply)
+      + origin                 = (known after apply)
+      + route_table_id         = (known after apply)
+      + state                  = (known after apply)
+
+      + timeouts {
+          + create = "5m"
+        }
+    }
+
+  # module.vpc.aws_route_table.public[0] will be created
+  + resource "aws_route_table" "public" {
+      + arn              = (known after apply)
+      + id               = (known after apply)
+      + owner_id         = (known after apply)
+      + propagating_vgws = (known after apply)
+      + route            = (known after apply)
+      + tags             = {
+          + "Environment" = "dev"
+          + "Name"        = "my-vpc-public"
+          + "Terraform"   = "true"
+        }
+      + tags_all         = {
+          + "Environment" = "dev"
+          + "Name"        = "my-vpc-public"
+          + "Terraform"   = "true"
+        }
+      + vpc_id           = (known after apply)
+    }
+
+  # module.vpc.aws_route_table_association.public[0] will be created
+  + resource "aws_route_table_association" "public" {
+      + id             = (known after apply)
+      + route_table_id = (known after apply)
+      + subnet_id      = (known after apply)
+    }
+
+  # module.vpc.aws_route_table_association.public[1] will be created
+  + resource "aws_route_table_association" "public" {
+      + id             = (known after apply)
+      + route_table_id = (known after apply)
+      + subnet_id      = (known after apply)
+    }
+
+  # module.vpc.aws_subnet.public[0] will be created
+  + resource "aws_subnet" "public" {
+      + arn                                            = (known after apply)
+      + assign_ipv6_address_on_creation                = false
+      + availability_zone                              = "us-east-2a"
+      + availability_zone_id                           = (known after apply)
+      + cidr_block                                     = "10.0.1.0/24"
+      + enable_dns64                                   = false
+      + enable_resource_name_dns_a_record_on_launch    = false
+      + enable_resource_name_dns_aaaa_record_on_launch = false
+      + id                                             = (known after apply)
+      + ipv6_cidr_block_association_id                 = (known after apply)
+      + ipv6_native                                    = false
+      + map_public_ip_on_launch                        = false
+      + owner_id                                       = (known after apply)
+      + private_dns_hostname_type_on_launch            = (known after apply)
+      + tags                                           = {
+          + "Environment" = "dev"
+          + "Name"        = "my-vpc-public-us-east-2a"
+          + "Terraform"   = "true"
+        }
+      + tags_all                                       = {
+          + "Environment" = "dev"
+          + "Name"        = "my-vpc-public-us-east-2a"
+          + "Terraform"   = "true"
+        }
+      + vpc_id                                         = (known after apply)
+    }
+
+  # module.vpc.aws_subnet.public[1] will be created
+  + resource "aws_subnet" "public" {
+      + arn                                            = (known after apply)
+      + assign_ipv6_address_on_creation                = false
+      + availability_zone                              = "us-east-2a"
+      + availability_zone_id                           = (known after apply)
+      + cidr_block                                     = "10.0.2.0/24"
+      + enable_dns64                                   = false
+      + enable_resource_name_dns_a_record_on_launch    = false
+      + enable_resource_name_dns_aaaa_record_on_launch = false
+      + id                                             = (known after apply)
+      + ipv6_cidr_block_association_id                 = (known after apply)
+      + ipv6_native                                    = false
+      + map_public_ip_on_launch                        = false
+      + owner_id                                       = (known after apply)
+      + private_dns_hostname_type_on_launch            = (known after apply)
+      + tags                                           = {
+          + "Environment" = "dev"
+          + "Name"        = "my-vpc-public-us-east-2a"
+          + "Terraform"   = "true"
+        }
+      + tags_all                                       = {
+          + "Environment" = "dev"
+          + "Name"        = "my-vpc-public-us-east-2a"
+          + "Terraform"   = "true"
+        }
+      + vpc_id                                         = (known after apply)
+    }
+
+  # module.vpc.aws_vpc.this[0] will be created
+  + resource "aws_vpc" "this" {
+      + arn                                  = (known after apply)
+      + cidr_block                           = "10.0.0.0/16"
+      + default_network_acl_id               = (known after apply)
+      + default_route_table_id               = (known after apply)
+      + default_security_group_id            = (known after apply)
+      + dhcp_options_id                      = (known after apply)
+      + enable_dns_hostnames                 = true
+      + enable_dns_support                   = true
+      + enable_network_address_usage_metrics = (known after apply)
+      + id                                   = (known after apply)
+      + instance_tenancy                     = "default"
+      + ipv6_association_id                  = (known after apply)
+      + ipv6_cidr_block                      = (known after apply)
+      + ipv6_cidr_block_network_border_group = (known after apply)
+      + main_route_table_id                  = (known after apply)
+      + owner_id                             = (known after apply)
+      + tags                                 = {
+          + "Environment" = "dev"
+          + "Name"        = "my-vpc"
+          + "Terraform"   = "true"
+        }
+      + tags_all                             = {
+          + "Environment" = "dev"
+          + "Name"        = "my-vpc"
+          + "Terraform"   = "true"
+        }
+    }
+
+Plan: 17 to add, 0 to change, 0 to destroy.
+
+Changes to Outputs:
+  + private_key_path = "ec2-dev-250-key.pem"
+  + vm-public-ip     = (known after apply)
+  + vpccidr          = (known after apply)
+  + vpcid            = (known after apply)
+tls_private_key.devk1: Creating...
+module.vpc.aws_vpc.this[0]: Creating...
+tls_private_key.devk1: Creation complete after 2s [id=0595d6c862454b73e159ca4efcbaa0da4ad364d3]
+aws_key_pair.ec2_key: Creating...
+local_file.devk1_pem: Creating...
+local_file.devk1_pem: Creation complete after 0s [id=ded85d89ad4c9ac868ac945bcffc008cf0e17cc3]
+aws_key_pair.ec2_key: Creation complete after 3s [id=ec2-dev-250-key]
+module.vpc.aws_vpc.this[0]: Still creating... [10s elapsed]
+module.vpc.aws_vpc.this[0]: Creation complete after 19s [id=vpc-0e9344be58d611b60]
+module.vpc.aws_default_security_group.this[0]: Creating...
+module.vpc.aws_default_route_table.default[0]: Creating...
+module.vpc.aws_internet_gateway.this[0]: Creating...
+module.vpc.aws_route_table.public[0]: Creating...
+module.vpc.aws_subnet.public[0]: Creating...
+module.vpc.aws_default_network_acl.this[0]: Creating...
+aws_security_group.allow_http_ssh: Creating...
+module.vpc.aws_subnet.public[1]: Creating...
+module.vpc.aws_default_route_table.default[0]: Creation complete after 2s [id=rtb-02198cec11705e8dc]
+module.vpc.aws_subnet.public[0]: Creation complete after 2s [id=subnet-04132903640d3c842]
+module.vpc.aws_subnet.public[1]: Creation complete after 2s [id=subnet-05e45b87979aa5da4]
+module.vpc.aws_route_table.public[0]: Creation complete after 3s [id=rtb-02ff1b336c9f96f83]
+module.vpc.aws_route_table_association.public[0]: Creating...
+module.vpc.aws_route_table_association.public[1]: Creating...
+module.vpc.aws_route.public_internet_gateway[0]: Creating...
+module.vpc.aws_route_table_association.public[0]: Creation complete after 1s [id=rtbassoc-07f8acfec1bfa5f7c]
+module.vpc.aws_route_table_association.public[1]: Creation complete after 1s [id=rtbassoc-0e60c536933ece8d5]
+module.vpc.aws_default_security_group.this[0]: Creation complete after 4s [id=sg-02eda0b1bbea8190d]
+module.vpc.aws_default_network_acl.this[0]: Creation complete after 5s [id=acl-0373a82e4915a9914]
+module.vpc.aws_route.public_internet_gateway[0]: Creation complete after 2s [id=r-rtb-02ff1b336c9f96f831080289494]
+data.aws_vpc.my-vpc: Reading...
+aws_security_group.allow_http_ssh: Creation complete after 6s [id=sg-0d803715c60b50ed9]
+module.ec2_instance.aws_instance.this[0]: Creating...
+data.aws_vpc.my-vpc: Read complete after 2s [id=vpc-0e9344be58d611b60]
+module.ec2_instance.aws_instance.this[0]: Still creating... [10s elapsed]
+module.ec2_instance.aws_instance.this[0]: Creation complete after 19s [id=i-0f24e129e1c51dbde]
+data.aws_instance.my-instance: Reading...
+aws_eip.dev-eip: Creating...
+data.aws_instance.my-instance: Read complete after 3s [id=i-0f24e129e1c51dbde]
+aws_eip.dev-eip: Creation complete after 4s [id=eipalloc-0a1cf341a398e2387]
+
+Apply complete! Resources: 17 added, 0 changed, 0 destroyed.
+
+Outputs:
+
+private_key_path = "ec2-dev-250-key.pem"
+vm-public-ip = ""
+vpccidr = "10.0.0.0/16"
+vpcid = "vpc-0e9344be58d611b60"
+PS C:\Terraform\Labs\Final-Assignment> terraform apply -var-file="dev.tfvars"
+tls_private_key.devk1: Refreshing state... [id=0595d6c862454b73e159ca4efcbaa0da4ad364d3]
+local_file.devk1_pem: Refreshing state... [id=ded85d89ad4c9ac868ac945bcffc008cf0e17cc3]
+module.ec2_instance.data.aws_partition.current: Reading...
+aws_key_pair.ec2_key: Refreshing state... [id=ec2-dev-250-key]
+module.vpc.aws_vpc.this[0]: Refreshing state... [id=vpc-0e9344be58d611b60]
+module.ec2_instance.data.aws_partition.current: Read complete after 0s [id=aws]
+module.vpc.aws_default_route_table.default[0]: Refreshing state... [id=rtb-02198cec11705e8dc]
+module.vpc.aws_default_security_group.this[0]: Refreshing state... [id=sg-02eda0b1bbea8190d]
+aws_security_group.allow_http_ssh: Refreshing state... [id=sg-0d803715c60b50ed9]
+module.vpc.aws_default_network_acl.this[0]: Refreshing state... [id=acl-0373a82e4915a9914]
+module.vpc.aws_internet_gateway.this[0]: Refreshing state... [id=igw-06c6e6b8a5293e215]
+module.vpc.aws_subnet.public[1]: Refreshing state... [id=subnet-05e45b87979aa5da4]
+module.vpc.aws_subnet.public[0]: Refreshing state... [id=subnet-04132903640d3c842]
+module.vpc.aws_route_table.public[0]: Refreshing state... [id=rtb-02ff1b336c9f96f83]
+module.vpc.aws_route_table_association.public[0]: Refreshing state... [id=rtbassoc-07f8acfec1bfa5f7c]
+module.vpc.aws_route_table_association.public[1]: Refreshing state... [id=rtbassoc-0e60c536933ece8d5]
+module.ec2_instance.aws_instance.this[0]: Refreshing state... [id=i-0f24e129e1c51dbde]
+module.vpc.aws_route.public_internet_gateway[0]: Refreshing state... [id=r-rtb-02ff1b336c9f96f831080289494]
+data.aws_vpc.my-vpc: Reading...
+data.aws_vpc.my-vpc: Read complete after 2s [id=vpc-0e9344be58d611b60]
+aws_eip.dev-eip: Refreshing state... [id=eipalloc-0a1cf341a398e2387]
+data.aws_instance.my-instance: Reading...
+data.aws_instance.my-instance: Read complete after 2s [id=i-0f24e129e1c51dbde]
+
+Note: Objects have changed outside of Terraform
+
+Terraform detected the following changes made outside of Terraform since the last "terraform apply" which may have affected this plan:
+
+  # module.ec2_instance.aws_instance.this[0] has changed
+  ~ resource "aws_instance" "this" {
+        id                                   = "i-0f24e129e1c51dbde"
+      + public_dns                           = "ec2-3-143-102-28.us-east-2.compute.amazonaws.com"
+      + public_ip                            = "3.143.102.28"
+        tags                                 = {
+            "Name" = "sandip_vm"
+        }
+        # (39 unchanged attributes hidden)
+
+        # (9 unchanged blocks hidden)
+    }
+
+Unless you have made equivalent changes to your configuration, or ignored the relevant attributes using ignore_changes, the following plan may include actions to undo or respond  
+to these changes.
+
+────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────── 
+
+Changes to Outputs:
+  ~ vm-public-ip     = "" -> "3.143.102.28"
+
+You can apply this plan to save these new output values to the Terraform state, without changing any real infrastructure.
+
+Do you want to perform these actions in workspace "dev"?
+  Terraform will perform the actions described above.
+  Only 'yes' will be accepted to approve.
+
+  Enter a value: yes
+
+
+Apply complete! Resources: 0 added, 0 changed, 0 destroyed.
+
+Outputs:
+
+private_key_path = "ec2-dev-250-key.pem"
+vm-public-ip = "3.143.102.28"
+vpccidr = "10.0.0.0/16"
+vpcid = "vpc-0e9344be58d611b60"
+PS C:\Terraform\Labs\Final-Assignment> terraform destroy -auto-approve
+tls_private_key.devk1: Refreshing state... [id=0595d6c862454b73e159ca4efcbaa0da4ad364d3]
+local_file.devk1_pem: Refreshing state... [id=ded85d89ad4c9ac868ac945bcffc008cf0e17cc3]
+module.ec2_instance.data.aws_partition.current: Reading...
+aws_key_pair.ec2_key: Refreshing state... [id=ec2-dev-250-key]
+module.vpc.aws_vpc.this[0]: Refreshing state... [id=vpc-0e9344be58d611b60]
+module.ec2_instance.data.aws_partition.current: Read complete after 0s [id=aws]
+module.vpc.aws_default_route_table.default[0]: Refreshing state... [id=rtb-02198cec11705e8dc]
+module.vpc.aws_default_network_acl.this[0]: Refreshing state... [id=acl-0373a82e4915a9914]
+module.vpc.aws_default_security_group.this[0]: Refreshing state... [id=sg-02eda0b1bbea8190d]
+aws_security_group.allow_http_ssh: Refreshing state... [id=sg-0d803715c60b50ed9]
+module.vpc.aws_route_table.public[0]: Refreshing state... [id=rtb-02ff1b336c9f96f83]
+module.vpc.aws_internet_gateway.this[0]: Refreshing state... [id=igw-06c6e6b8a5293e215]
+module.vpc.aws_subnet.public[0]: Refreshing state... [id=subnet-04132903640d3c842]
+module.vpc.aws_subnet.public[1]: Refreshing state... [id=subnet-05e45b87979aa5da4]
+module.vpc.aws_route.public_internet_gateway[0]: Refreshing state... [id=r-rtb-02ff1b336c9f96f831080289494]
+module.vpc.aws_route_table_association.public[1]: Refreshing state... [id=rtbassoc-0e60c536933ece8d5]
+module.vpc.aws_route_table_association.public[0]: Refreshing state... [id=rtbassoc-07f8acfec1bfa5f7c]
+module.ec2_instance.aws_instance.this[0]: Refreshing state... [id=i-0f24e129e1c51dbde]
+data.aws_vpc.my-vpc: Reading...
+data.aws_vpc.my-vpc: Read complete after 2s [id=vpc-0e9344be58d611b60]
+aws_eip.dev-eip: Refreshing state... [id=eipalloc-0a1cf341a398e2387]
+data.aws_instance.my-instance: Reading...
+data.aws_instance.my-instance: Read complete after 3s [id=i-0f24e129e1c51dbde]
+
+Terraform used the selected providers to generate the following execution plan. Resource actions are indicated with the following symbols:
+  - destroy
+
+Terraform will perform the following actions:
+
+  # aws_eip.dev-eip will be destroyed
+  - resource "aws_eip" "dev-eip" {
+      - allocation_id            = "eipalloc-0a1cf341a398e2387" -> null
+      - arn                      = "arn:aws:ec2:us-east-2:737795138174:elastic-ip/eipalloc-0a1cf341a398e2387" -> null
+      - association_id           = "eipassoc-052aac77750864b1b" -> null
+      - domain                   = "vpc" -> null
+      - id                       = "eipalloc-0a1cf341a398e2387" -> null
+      - instance                 = "i-0f24e129e1c51dbde" -> null
+      - network_border_group     = "us-east-2" -> null
+      - network_interface        = "eni-0c0d6c85b1cdeb2b3" -> null
+      - private_dns              = "ip-10-0-1-137.us-east-2.compute.internal" -> null
+      - private_ip               = "10.0.1.137" -> null
+      - public_dns               = "ec2-3-143-102-28.us-east-2.compute.amazonaws.com" -> null
+      - public_ip                = "3.143.102.28" -> null
+      - public_ipv4_pool         = "amazon" -> null
+      - tags                     = {
+          - "Name" = "dev-ec2-elastic-IP"
+        } -> null
+      - tags_all                 = {
+          - "Name" = "dev-ec2-elastic-IP"
+        } -> null
+      - vpc                      = true -> null
+        # (4 unchanged attributes hidden)
+    }
+
+  # aws_key_pair.ec2_key will be destroyed
+  - resource "aws_key_pair" "ec2_key" {
+      - arn             = "arn:aws:ec2:us-east-2:737795138174:key-pair/ec2-dev-250-key" -> null
+      - fingerprint     = "5e:4c:26:93:d9:0f:b1:29:9f:b0:79:20:91:ac:47:4b" -> null
+      - id              = "ec2-dev-250-key" -> null
+      - key_name        = "ec2-dev-250-key" -> null
+      - key_pair_id     = "key-0d76d75566016b987" -> null
+      - key_type        = "rsa" -> null
+      - public_key      = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCnJdxLxt9d5qm5bvWrlMvRe6LUoFyqZ6QsFL3FUpetSw3KEnePKStLRfcjweOi4WKz1Dtoy4jt/PDjDqEEx1P4mYsgclVwM7Ex06F5uWMYPkLcCdJFaCL8SVKbOlReRcL4T7kYTWQBIFXX4Ls4+9c4V4Wk+Pd/VwyXxP5SUTctRhyRtHzI5D0oskYRG5WoQGLIq5ywREbrRATUWjfPTF3U5o1KYapR3dLaZufvQBsJRwf5PGCmcgHU3esqJVPt4nQbpYSSO0rrfPuzdLRiupOfMxrUxE8NpHSlgkrjqJaMSxesFPPiOzPeZdKWgfZGSe91Yky41WX8K5q8fL75OlNb" -> null
+      - tags            = {
+          - "Name" = "ec2-dev-tls-key"
+        } -> null
+      - tags_all        = {
+          - "Name" = "ec2-dev-tls-key"
+        } -> null
+        # (1 unchanged attribute hidden)
+    }
+
+  # aws_security_group.allow_http_ssh will be destroyed
+  - resource "aws_security_group" "allow_http_ssh" {
+      - arn                    = "arn:aws:ec2:us-east-2:737795138174:security-group/sg-0d803715c60b50ed9" -> null
+      - description            = "Allow inbound HTTP and SSH access" -> null
+      - egress                 = [
+          - {
+              - cidr_blocks      = [
+                  - "0.0.0.0/0",
+                ]
+              - from_port        = 0
+              - ipv6_cidr_blocks = []
+              - prefix_list_ids  = []
+              - protocol         = "-1"
+              - security_groups  = []
+              - self             = false
+              - to_port          = 0
+                # (1 unchanged attribute hidden)
+            },
+        ] -> null
+      - id                     = "sg-0d803715c60b50ed9" -> null
+      - ingress                = [
+          - {
+              - cidr_blocks      = [
+                  - "0.0.0.0/0",
+                ]
+              - from_port        = 22
+              - ipv6_cidr_blocks = []
+              - prefix_list_ids  = []
+              - protocol         = "tcp"
+              - security_groups  = []
+              - self             = false
+              - to_port          = 22
+                # (1 unchanged attribute hidden)
+            },
+          - {
+              - cidr_blocks      = [
+                  - "0.0.0.0/0",
+                ]
+              - from_port        = 80
+              - ipv6_cidr_blocks = []
+              - prefix_list_ids  = []
+              - protocol         = "tcp"
+              - security_groups  = []
+              - self             = false
+              - to_port          = 80
+                # (1 unchanged attribute hidden)
+            },
+        ] -> null
+      - name                   = "allow-http-ssh" -> null
+      - owner_id               = "737795138174" -> null
+      - revoke_rules_on_delete = false -> null
+      - tags                   = {
+          - "Name" = "Allow HTTP and SSH"
+        } -> null
+      - tags_all               = {
+          - "Name" = "Allow HTTP and SSH"
+        } -> null
+      - vpc_id                 = "vpc-0e9344be58d611b60" -> null
+        # (1 unchanged attribute hidden)
+    }
+
+  # local_file.devk1_pem will be destroyed
+  - resource "local_file" "devk1_pem" {
+      - content              = (sensitive value) -> null
+      - content_base64sha256 = "01DWAZxPJ66CmZMymcD9/YRdBgNTaJ77Hm0s2Sfki3g=" -> null
+      - content_base64sha512 = "dGAHSciQqaRj1iMZJxQDeyZ2Lxd1gxqG83FS7hJMUvyiFk6Yc6yyMhZGbeOBMrYwiUo50NeZWJ6nebV8QFvyAQ==" -> null
+      - content_md5          = "870863b2e4b7bb2ad9140c7e1eaccf03" -> null
+      - content_sha1         = "ded85d89ad4c9ac868ac945bcffc008cf0e17cc3" -> null
+      - content_sha256       = "d350d6019c4f27ae8299933299c0fdfd845d060353689efb1e6d2cd927e48b78" -> null
+      - content_sha512       = "74600749c890a9a463d623192714037b26762f1775831a86f37152ee124c52fca2164e9873acb23216466de38132b630894a39d0d799589ea779b57c405bf201" -> null
+      - directory_permission = "0777" -> null
+      - file_permission      = "0400" -> null
+      - filename             = "ec2-dev-250-key.pem" -> null
+      - id                   = "ded85d89ad4c9ac868ac945bcffc008cf0e17cc3" -> null
+    }
+
+  # tls_private_key.devk1 will be destroyed
+  - resource "tls_private_key" "devk1" {
+      - algorithm                     = "RSA" -> null
+      - ecdsa_curve                   = "P224" -> null
+      - id                            = "0595d6c862454b73e159ca4efcbaa0da4ad364d3" -> null
+      - private_key_openssh           = (sensitive value) -> null
+      - private_key_pem               = (sensitive value) -> null
+      - private_key_pem_pkcs8         = (sensitive value) -> null
+      - public_key_fingerprint_md5    = "ff:5e:94:0e:77:a3:b8:0c:15:6b:f2:5d:03:7c:ce:71" -> null
+      - public_key_fingerprint_sha256 = "SHA256:oAdCVW52hcaca/PJeEiZxDxMyBfCNw7lqfPGsutxNSw" -> null
+      - public_key_openssh            = <<-EOT
+            ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCnJdxLxt9d5qm5bvWrlMvRe6LUoFyqZ6QsFL3FUpetSw3KEnePKStLRfcjweOi4WKz1Dtoy4jt/PDjDqEEx1P4mYsgclVwM7Ex06F5uWMYPkLcCdJFaCL8SVKbOlReRcL4T7kYTWQBIFXX4Ls4+9c4V4Wk+Pd/VwyXxP5SUTctRhyRtHzI5D0oskYRG5WoQGLIq5ywREbrRATUWjfPTF3U5o1KYapR3dLaZufvQBsJRwf5PGCmcgHU3esqJVPt4nQbpYSSO0rrfPuzdLRiupOfMxrUxE8NpHSlgkrjqJaMSxesFPPiOzPeZdKWgfZGSe91Yky41WX8K5q8fL75OlNb
+        EOT -> null
+      - public_key_pem                = <<-EOT
+            -----BEGIN PUBLIC KEY-----
+            MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEApyXcS8bfXeapuW71q5TL
+            0Xui1KBcqmekLBS9xVKXrUsNyhJ3jykrS0X3I8HjouFis9Q7aMuI7fzw4w6hBMdT
+            +JmLIHJVcDOxMdOhebljGD5C3AnSRWgi/ElSmzpUXkXC+E+5GE1kASBV1+C7OPvX
+            OFeFpPj3f1cMl8T+UlE3LUYckbR8yOQ9KLJGERuVqEBiyKucsERG60QE1Fo3z0xd
+            1OaNSmGqUd3S2mbn70AbCUcH+TxgpnIB1N3rKiVT7eJ0G6WEkjtK63z7s3S0YrqT
+            nzMa1MRPDaR0pYJK46iWjEsXrBTz4jsz3mXSloH2RknvdWJMuNVl/CuavHy++TpT
+            WwIDAQAB
+            -----END PUBLIC KEY-----
+        EOT -> null
+      - rsa_bits                      = 2048 -> null
+    }
+
+  # module.ec2_instance.aws_instance.this[0] will be destroyed
+  - resource "aws_instance" "this" {
+      - ami                                  = "ami-0fae88c1e6794aa17" -> null
+      - arn                                  = "arn:aws:ec2:us-east-2:737795138174:instance/i-0f24e129e1c51dbde" -> null
+      - associate_public_ip_address          = true -> null
+      - availability_zone                    = "us-east-2a" -> null
+      - cpu_core_count                       = 1 -> null
+      - cpu_threads_per_core                 = 1 -> null
+      - disable_api_stop                     = false -> null
+      - disable_api_termination              = false -> null
+      - ebs_optimized                        = false -> null
+      - get_password_data                    = false -> null
+      - hibernation                          = false -> null
+      - id                                   = "i-0f24e129e1c51dbde" -> null
+      - instance_initiated_shutdown_behavior = "stop" -> null
+      - instance_state                       = "running" -> null
+      - instance_type                        = "t2.micro" -> null
+      - ipv6_address_count                   = 0 -> null
+      - ipv6_addresses                       = [] -> null
+      - key_name                             = "ec2-dev-250-key" -> null
+      - monitoring                           = false -> null
+      - placement_partition_number           = 0 -> null
+      - primary_network_interface_id         = "eni-0c0d6c85b1cdeb2b3" -> null
+      - private_dns                          = "ip-10-0-1-137.us-east-2.compute.internal" -> null
+      - private_ip                           = "10.0.1.137" -> null
+      - public_dns                           = "ec2-3-143-102-28.us-east-2.compute.amazonaws.com" -> null
+      - public_ip                            = "3.143.102.28" -> null
+      - secondary_private_ips                = [] -> null
+      - security_groups                      = [] -> null
+      - source_dest_check                    = true -> null
+      - subnet_id                            = "subnet-04132903640d3c842" -> null
+      - tags                                 = {
+          - "Name" = "sandip_vm"
+        } -> null
+      - tags_all                             = {
+          - "Name" = "sandip_vm"
+        } -> null
+      - tenancy                              = "default" -> null
+      - user_data                            = "931550cc8fe1d2c8d5b62581eda21239035f7f98" -> null
+      - user_data_replace_on_change          = false -> null
+      - volume_tags                          = {
+          - "Name" = "sandip_vm"
+        } -> null
+      - vpc_security_group_ids               = [
+          - "sg-0d803715c60b50ed9",
+        ] -> null
+        # (7 unchanged attributes hidden)
+
+      - capacity_reservation_specification {
+          - capacity_reservation_preference = "open" -> null
+        }
+
+      - cpu_options {
+          - core_count       = 1 -> null
+          - threads_per_core = 1 -> null
+            # (1 unchanged attribute hidden)
+        }
+
+      - credit_specification {
+          - cpu_credits = "standard" -> null
+        }
+
+      - enclave_options {
+          - enabled = false -> null
+        }
+
+      - maintenance_options {
+          - auto_recovery = "default" -> null
+        }
+
+      - metadata_options {
+          - http_endpoint               = "enabled" -> null
+          - http_protocol_ipv6          = "disabled" -> null
+          - http_put_response_hop_limit = 1 -> null
+          - http_tokens                 = "optional" -> null
+          - instance_metadata_tags      = "disabled" -> null
+        }
+
+      - private_dns_name_options {
+          - enable_resource_name_dns_a_record    = false -> null
+          - enable_resource_name_dns_aaaa_record = false -> null
+          - hostname_type                        = "ip-name" -> null
+        }
+
+      - root_block_device {
+          - delete_on_termination = true -> null
+          - device_name           = "/dev/xvda" -> null
+          - encrypted             = false -> null
+          - iops                  = 3000 -> null
+          - tags                  = {} -> null
+          - tags_all              = {} -> null
+          - throughput            = 125 -> null
+          - volume_id             = "vol-0afd4b7c6346c6b2e" -> null
+          - volume_size           = 8 -> null
+          - volume_type           = "gp3" -> null
+            # (1 unchanged attribute hidden)
+        }
+
+      - timeouts {}
+    }
+
+  # module.vpc.aws_default_network_acl.this[0] will be destroyed
+  - resource "aws_default_network_acl" "this" {
+      - arn                    = "arn:aws:ec2:us-east-2:737795138174:network-acl/acl-0373a82e4915a9914" -> null
+      - default_network_acl_id = "acl-0373a82e4915a9914" -> null
+      - id                     = "acl-0373a82e4915a9914" -> null
+      - owner_id               = "737795138174" -> null
+      - subnet_ids             = [
+          - "subnet-04132903640d3c842",
+          - "subnet-05e45b87979aa5da4",
+        ] -> null
+      - tags                   = {
+          - "Environment" = "dev"
+          - "Name"        = "my-vpc-default"
+          - "Terraform"   = "true"
+        } -> null
+      - tags_all               = {
+          - "Environment" = "dev"
+          - "Name"        = "my-vpc-default"
+          - "Terraform"   = "true"
+        } -> null
+      - vpc_id                 = "vpc-0e9344be58d611b60" -> null
+
+      - egress {
+          - action          = "allow" -> null
+          - from_port       = 0 -> null
+          - icmp_code       = 0 -> null
+          - icmp_type       = 0 -> null
+          - ipv6_cidr_block = "::/0" -> null
+          - protocol        = "-1" -> null
+          - rule_no         = 101 -> null
+          - to_port         = 0 -> null
+            # (1 unchanged attribute hidden)
+        }
+      - egress {
+          - action          = "allow" -> null
+          - cidr_block      = "0.0.0.0/0" -> null
+          - from_port       = 0 -> null
+          - icmp_code       = 0 -> null
+          - icmp_type       = 0 -> null
+          - protocol        = "-1" -> null
+          - rule_no         = 100 -> null
+          - to_port         = 0 -> null
+            # (1 unchanged attribute hidden)
+        }
+
+      - ingress {
+          - action          = "allow" -> null
+          - from_port       = 0 -> null
+          - icmp_code       = 0 -> null
+          - icmp_type       = 0 -> null
+          - ipv6_cidr_block = "::/0" -> null
+          - protocol        = "-1" -> null
+          - rule_no         = 101 -> null
+          - to_port         = 0 -> null
+            # (1 unchanged attribute hidden)
+        }
+      - ingress {
+          - action          = "allow" -> null
+          - cidr_block      = "0.0.0.0/0" -> null
+          - from_port       = 0 -> null
+          - icmp_code       = 0 -> null
+          - icmp_type       = 0 -> null
+          - protocol        = "-1" -> null
+          - rule_no         = 100 -> null
+          - to_port         = 0 -> null
+            # (1 unchanged attribute hidden)
+        }
+    }
+
+  # module.vpc.aws_default_route_table.default[0] will be destroyed
+  - resource "aws_default_route_table" "default" {
+      - arn                    = "arn:aws:ec2:us-east-2:737795138174:route-table/rtb-02198cec11705e8dc" -> null
+      - default_route_table_id = "rtb-02198cec11705e8dc" -> null
+      - id                     = "rtb-02198cec11705e8dc" -> null
+      - owner_id               = "737795138174" -> null
+      - propagating_vgws       = [] -> null
+      - route                  = [] -> null
+      - tags                   = {
+          - "Environment" = "dev"
+          - "Name"        = "my-vpc-default"
+          - "Terraform"   = "true"
+        } -> null
+      - tags_all               = {
+          - "Environment" = "dev"
+          - "Name"        = "my-vpc-default"
+          - "Terraform"   = "true"
+        } -> null
+      - vpc_id                 = "vpc-0e9344be58d611b60" -> null
+
+      - timeouts {
+          - create = "5m" -> null
+          - update = "5m" -> null
+        }
+    }
+
+  # module.vpc.aws_default_security_group.this[0] will be destroyed
+  - resource "aws_default_security_group" "this" {
+      - arn                    = "arn:aws:ec2:us-east-2:737795138174:security-group/sg-02eda0b1bbea8190d" -> null
+      - description            = "default VPC security group" -> null
+      - egress                 = [] -> null
+      - id                     = "sg-02eda0b1bbea8190d" -> null
+      - ingress                = [] -> null
+      - name                   = "default" -> null
+      - owner_id               = "737795138174" -> null
+      - revoke_rules_on_delete = false -> null
+      - tags                   = {
+          - "Environment" = "dev"
+          - "Name"        = "my-vpc-default"
+          - "Terraform"   = "true"
+        } -> null
+      - tags_all               = {
+          - "Environment" = "dev"
+          - "Name"        = "my-vpc-default"
+          - "Terraform"   = "true"
+        } -> null
+      - vpc_id                 = "vpc-0e9344be58d611b60" -> null
+        # (1 unchanged attribute hidden)
+    }
+
+  # module.vpc.aws_internet_gateway.this[0] will be destroyed
+  - resource "aws_internet_gateway" "this" {
+      - arn      = "arn:aws:ec2:us-east-2:737795138174:internet-gateway/igw-06c6e6b8a5293e215" -> null
+      - id       = "igw-06c6e6b8a5293e215" -> null
+      - owner_id = "737795138174" -> null
+      - tags     = {
+          - "Environment" = "dev"
+          - "Name"        = "my-vpc"
+          - "Terraform"   = "true"
+        } -> null
+      - tags_all = {
+          - "Environment" = "dev"
+          - "Name"        = "my-vpc"
+          - "Terraform"   = "true"
+        } -> null
+      - vpc_id   = "vpc-0e9344be58d611b60" -> null
+    }
+
+  # module.vpc.aws_route.public_internet_gateway[0] will be destroyed
+  - resource "aws_route" "public_internet_gateway" {
+      - destination_cidr_block      = "0.0.0.0/0" -> null
+      - gateway_id                  = "igw-06c6e6b8a5293e215" -> null
+      - id                          = "r-rtb-02ff1b336c9f96f831080289494" -> null
+      - origin                      = "CreateRoute" -> null
+      - route_table_id              = "rtb-02ff1b336c9f96f83" -> null
+      - state                       = "active" -> null
+        # (13 unchanged attributes hidden)
+
+      - timeouts {
+          - create = "5m" -> null
+        }
+    }
+
+  # module.vpc.aws_route_table.public[0] will be destroyed
+  - resource "aws_route_table" "public" {
+      - arn              = "arn:aws:ec2:us-east-2:737795138174:route-table/rtb-02ff1b336c9f96f83" -> null
+      - id               = "rtb-02ff1b336c9f96f83" -> null
+      - owner_id         = "737795138174" -> null
+      - propagating_vgws = [] -> null
+      - route            = [
+          - {
+              - cidr_block                 = "0.0.0.0/0"
+              - gateway_id                 = "igw-06c6e6b8a5293e215"
+                # (11 unchanged attributes hidden)
+            },
+        ] -> null
+      - tags             = {
+          - "Environment" = "dev"
+          - "Name"        = "my-vpc-public"
+          - "Terraform"   = "true"
+        } -> null
+      - tags_all         = {
+          - "Environment" = "dev"
+          - "Name"        = "my-vpc-public"
+          - "Terraform"   = "true"
+        } -> null
+      - vpc_id           = "vpc-0e9344be58d611b60" -> null
+    }
+
+  # module.vpc.aws_route_table_association.public[0] will be destroyed
+  - resource "aws_route_table_association" "public" {
+      - id             = "rtbassoc-07f8acfec1bfa5f7c" -> null
+      - route_table_id = "rtb-02ff1b336c9f96f83" -> null
+      - subnet_id      = "subnet-04132903640d3c842" -> null
+        # (1 unchanged attribute hidden)
+    }
+
+  # module.vpc.aws_route_table_association.public[1] will be destroyed
+  - resource "aws_route_table_association" "public" {
+      - id             = "rtbassoc-0e60c536933ece8d5" -> null
+      - route_table_id = "rtb-02ff1b336c9f96f83" -> null
+      - subnet_id      = "subnet-05e45b87979aa5da4" -> null
+        # (1 unchanged attribute hidden)
+    }
+
+  # module.vpc.aws_subnet.public[0] will be destroyed
+  - resource "aws_subnet" "public" {
+      - arn                                            = "arn:aws:ec2:us-east-2:737795138174:subnet/subnet-04132903640d3c842" -> null
+      - assign_ipv6_address_on_creation                = false -> null
+      - availability_zone                              = "us-east-2a" -> null
+      - availability_zone_id                           = "use2-az1" -> null
+      - cidr_block                                     = "10.0.1.0/24" -> null
+      - enable_dns64                                   = false -> null
+      - enable_lni_at_device_index                     = 0 -> null
+      - enable_resource_name_dns_a_record_on_launch    = false -> null
+      - enable_resource_name_dns_aaaa_record_on_launch = false -> null
+      - id                                             = "subnet-04132903640d3c842" -> null
+      - ipv6_native                                    = false -> null
+      - map_customer_owned_ip_on_launch                = false -> null
+      - map_public_ip_on_launch                        = false -> null
+      - owner_id                                       = "737795138174" -> null
+      - private_dns_hostname_type_on_launch            = "ip-name" -> null
+      - tags                                           = {
+          - "Environment" = "dev"
+          - "Name"        = "my-vpc-public-us-east-2a"
+          - "Terraform"   = "true"
+        } -> null
+      - tags_all                                       = {
+          - "Environment" = "dev"
+          - "Name"        = "my-vpc-public-us-east-2a"
+          - "Terraform"   = "true"
+        } -> null
+      - vpc_id                                         = "vpc-0e9344be58d611b60" -> null
+        # (4 unchanged attributes hidden)
+    }
+
+  # module.vpc.aws_subnet.public[1] will be destroyed
+  - resource "aws_subnet" "public" {
+      - arn                                            = "arn:aws:ec2:us-east-2:737795138174:subnet/subnet-05e45b87979aa5da4" -> null
+      - assign_ipv6_address_on_creation                = false -> null
+      - availability_zone                              = "us-east-2a" -> null
+      - availability_zone_id                           = "use2-az1" -> null
+      - cidr_block                                     = "10.0.2.0/24" -> null
+      - enable_dns64                                   = false -> null
+      - enable_lni_at_device_index                     = 0 -> null
+      - enable_resource_name_dns_a_record_on_launch    = false -> null
+      - enable_resource_name_dns_aaaa_record_on_launch = false -> null
+      - id                                             = "subnet-05e45b87979aa5da4" -> null
+      - ipv6_native                                    = false -> null
+      - map_customer_owned_ip_on_launch                = false -> null
+      - map_public_ip_on_launch                        = false -> null
+      - owner_id                                       = "737795138174" -> null
+      - private_dns_hostname_type_on_launch            = "ip-name" -> null
+      - tags                                           = {
+          - "Environment" = "dev"
+          - "Name"        = "my-vpc-public-us-east-2a"
+          - "Terraform"   = "true"
+        } -> null
+      - tags_all                                       = {
+          - "Environment" = "dev"
+          - "Name"        = "my-vpc-public-us-east-2a"
+          - "Terraform"   = "true"
+        } -> null
+      - vpc_id                                         = "vpc-0e9344be58d611b60" -> null
+        # (4 unchanged attributes hidden)
+    }
+
+  # module.vpc.aws_vpc.this[0] will be destroyed
+  - resource "aws_vpc" "this" {
+      - arn                                  = "arn:aws:ec2:us-east-2:737795138174:vpc/vpc-0e9344be58d611b60" -> null
+      - assign_generated_ipv6_cidr_block     = false -> null
+      - cidr_block                           = "10.0.0.0/16" -> null
+      - default_network_acl_id               = "acl-0373a82e4915a9914" -> null
+      - default_route_table_id               = "rtb-02198cec11705e8dc" -> null
+      - default_security_group_id            = "sg-02eda0b1bbea8190d" -> null
+      - dhcp_options_id                      = "dopt-21f45d4a" -> null
+      - enable_dns_hostnames                 = true -> null
+      - enable_dns_support                   = true -> null
+      - enable_network_address_usage_metrics = false -> null
+      - id                                   = "vpc-0e9344be58d611b60" -> null
+      - instance_tenancy                     = "default" -> null
+      - ipv6_netmask_length                  = 0 -> null
+      - main_route_table_id                  = "rtb-02198cec11705e8dc" -> null
+      - owner_id                             = "737795138174" -> null
+      - tags                                 = {
+          - "Environment" = "dev"
+          - "Name"        = "my-vpc"
+          - "Terraform"   = "true"
+        } -> null
+      - tags_all                             = {
+          - "Environment" = "dev"
+          - "Name"        = "my-vpc"
+          - "Terraform"   = "true"
+        } -> null
+        # (4 unchanged attributes hidden)
+    }
+
+Plan: 0 to add, 0 to change, 17 to destroy.
+
+Changes to Outputs:
+  - private_key_path = "ec2-dev-250-key.pem" -> null
+  - vm-public-ip     = "3.143.102.28" -> null
+  - vpccidr          = "10.0.0.0/16" -> null
+  - vpcid            = "vpc-0e9344be58d611b60" -> null
+local_file.devk1_pem: Destroying... [id=ded85d89ad4c9ac868ac945bcffc008cf0e17cc3]
+local_file.devk1_pem: Destruction complete after 0s
+module.vpc.aws_route_table_association.public[0]: Destroying... [id=rtbassoc-07f8acfec1bfa5f7c]
+aws_eip.dev-eip: Destroying... [id=eipalloc-0a1cf341a398e2387]
+module.vpc.aws_route.public_internet_gateway[0]: Destroying... [id=r-rtb-02ff1b336c9f96f831080289494]
+module.vpc.aws_default_security_group.this[0]: Destroying... [id=sg-02eda0b1bbea8190d]
+module.vpc.aws_route_table_association.public[1]: Destroying... [id=rtbassoc-0e60c536933ece8d5]
+module.vpc.aws_default_route_table.default[0]: Destroying... [id=rtb-02198cec11705e8dc]
+aws_key_pair.ec2_key: Destroying... [id=ec2-dev-250-key]
+module.vpc.aws_default_network_acl.this[0]: Destroying... [id=acl-0373a82e4915a9914]
+module.vpc.aws_default_network_acl.this[0]: Destruction complete after 0s
+module.vpc.aws_default_security_group.this[0]: Destruction complete after 0s
+module.vpc.aws_default_route_table.default[0]: Destruction complete after 0s
+module.vpc.aws_route_table_association.public[1]: Destruction complete after 1s
+aws_key_pair.ec2_key: Destruction complete after 1s
+tls_private_key.devk1: Destroying... [id=0595d6c862454b73e159ca4efcbaa0da4ad364d3]
+tls_private_key.devk1: Destruction complete after 0s
+module.vpc.aws_route_table_association.public[0]: Destruction complete after 2s
+module.vpc.aws_route.public_internet_gateway[0]: Destruction complete after 2s
+module.vpc.aws_internet_gateway.this[0]: Destroying... [id=igw-06c6e6b8a5293e215]
+module.vpc.aws_route_table.public[0]: Destroying... [id=rtb-02ff1b336c9f96f83]
+module.vpc.aws_internet_gateway.this[0]: Destruction complete after 1s
+aws_eip.dev-eip: Destruction complete after 3s
+module.ec2_instance.aws_instance.this[0]: Destroying... [id=i-0f24e129e1c51dbde]
+module.vpc.aws_route_table.public[0]: Destruction complete after 1s
+module.ec2_instance.aws_instance.this[0]: Still destroying... [id=i-0f24e129e1c51dbde, 10s elapsed]
+module.ec2_instance.aws_instance.this[0]: Still destroying... [id=i-0f24e129e1c51dbde, 20s elapsed]
+module.ec2_instance.aws_instance.this[0]: Still destroying... [id=i-0f24e129e1c51dbde, 30s elapsed]
+module.ec2_instance.aws_instance.this[0]: Still destroying... [id=i-0f24e129e1c51dbde, 40s elapsed]
+module.ec2_instance.aws_instance.this[0]: Still destroying... [id=i-0f24e129e1c51dbde, 50s elapsed]
+module.ec2_instance.aws_instance.this[0]: Destruction complete after 52s
+module.vpc.aws_subnet.public[0]: Destroying... [id=subnet-04132903640d3c842]
+module.vpc.aws_subnet.public[1]: Destroying... [id=subnet-05e45b87979aa5da4]
+aws_security_group.allow_http_ssh: Destroying... [id=sg-0d803715c60b50ed9]
+module.vpc.aws_subnet.public[1]: Destruction complete after 2s
+module.vpc.aws_subnet.public[0]: Destruction complete after 2s
+aws_security_group.allow_http_ssh: Destruction complete after 2s
+module.vpc.aws_vpc.this[0]: Destroying... [id=vpc-0e9344be58d611b60]
+module.vpc.aws_vpc.this[0]: Destruction complete after 1s
+
+Destroy complete! Resources: 17 destroyed.
+PS C:\Terraform\Labs\Final-Assignment> 
